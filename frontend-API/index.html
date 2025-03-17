@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Gráfico de Exportações</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <img src="KernelPanic.png" alt="Logo" class="logo" />
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <button><a href="#grafico">Balança Comercial</a></button>
+          <button><a href="#top5">Top 5 Produtos</a></button>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+    <h1>Gráficos de exportação</h1>
+    <p>Um projeto de criação de uma plataforma para filtrar e exibir dados de exportação de São Paulo, permitindo buscas por produto, destino e período. A interface apresentará as informações e forma clara, com gráficos e tabelas. </p>
+    </section>
+
+    
+    <div id="grafico">
+      <h3>Balança comercial entre 2013 e 2023</h3>
+      <form>
+        <label for="ano">Ano:</label>
+        <select name="ano">
+          <option value="2013">2013</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+        </select>
+        <label for="mes">Mês:</label>
+        <select name="mes">
+          <option value="Janeiro">Janeiro</option>
+          <option value="Fevereiro">Fevereiro</option>
+          <option value="Março">Março</option>
+          <option value="Abril">Abril</option>
+          <option value="Maio">Maio</option>
+          <option value="Junho">Junho</option>
+          <option value="Julho">Julho</option>
+          <option value="Agosto">Agosto</option>
+          <option value="Setembro">Setembro</option>
+          <option value="Outubro">Outubro</option>
+          <option value="Novembro">Novembro</option>
+        </select>
+        <label for="cidade">Cidades:</label>
+        <select name="cidade">
+          <option value="sjc">São José dos Campos</option>
+          <option value="a">a</option>
+        </select>
+        <label for="cidade">País destino:</label>
+        <select name="pais">
+          <option value="eua">EUA</option>
+          <option value="china">China</option>
+          <div class="search-box">
+            <span class="search-icon">&#128269</span>
+            <input type="text" placeholder="Código NCM">
+          </div>
+        </select>
+      </form>
+    </div>
+    <div id="top5"></div>
+  </body>
+</html>
