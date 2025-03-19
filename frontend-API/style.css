@@ -1,17 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #043872;
-  font-family: Space Grotesk;
+  width: 100%;
+  position: relative;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #043873;
+  border: 1px solid #043873;
+  box-sizing: border-box;
+  height: 1117px;
+  line-height: normal;
+  margin: 0;
 }
 
 header {
   position: absolute;
   top: 0;
   width: 100%;
-  color: #043872;
+  color: #043873;
   z-index: 1000;
 }
 
@@ -32,8 +41,8 @@ header {
 
 .nav-links li {
   margin: 0 20px;
-  margin-top: 20px;
-  font-size: 10px;
+  margin-top: 30px;
+  font-size: 80%;
 }
 
 .nav-links a {
@@ -44,14 +53,14 @@ header {
 
 button {
   background-color: #043872;
-  display: inline-block;
+  display: flex;
   margin: 10px;
-  border-color: #fff;
+  border-color: #f3f3f3;
   border-width: 0.5px;
-  padding: 10px 10px;
+  padding: 20px 35px;
   border-style: double;
   border-radius: 12px;
-  font-size: 10px;
+  font-size: 80%;
   transition: background-color 0.3s ease;
 }
 
@@ -64,14 +73,56 @@ button:hover {
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  height: 40px;
+  height: 50px;
 }
 
 section {
-  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #e1d8d8;
   margin-top: 150px;
+  margin-left: 200px;
   width: 100%;
   text-align: left;
+  gap: 5px;
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.titulo {
+  width: 531px;
+  position: relative;
+  font-size: 40px;
+  font-family: "Space Grotesk";
+  color: #e1d8d8;
+  text-align: left;
+  display: inline-block;
+}
+
+.texto {
+  width: 498px;
+  position: relative;
+  font-size: 20px;
+  line-height: 28px;
+  font-family: "Space Grotesk";
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+}
+
+.img {
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
 }
 
 .search-box {
@@ -86,7 +137,7 @@ section {
 .menu-icon {
   display: none;
   font-size: 24px;
-  color: white;
+  color: #e1d8d8;
   cursor: pointer;
 }
 
@@ -120,5 +171,19 @@ section {
   #menu-toggle:checked + .menu-icon + .nav-links {
     display: flex;
     max-height: 300px;
+  }
+
+  .conteudo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .texto {
+    width: 100%;
+  }
+
+  .img {
+    width: 80%;
   }
 }
