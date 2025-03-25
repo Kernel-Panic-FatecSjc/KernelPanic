@@ -4,4 +4,12 @@
 
 > _A API se trata de um projeto submetido à metodologia de ensino em implantação na Fatec São José dos Campos, do qual os alunos formam equipes baseadas na metodologia ágil SCRUM, tendo um aluno como Scrum Master, um sendo o Product Owner e o restante dos integrantes como Dev Team._
 
-###  ⏳ Status do projeto: 1/4 Sprint ✅
+###  ⏳ Status do projeto: 1/3 Sprint ✅
+
+## Visão Geral
+
+## Objetivo do produto
+
+## Metodologia utilizada
+
+## MVP's
