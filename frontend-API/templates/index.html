@@ -3,14 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Gráfico de Exportações</title>
   </head>
   <body>
     <header>
       <nav class="navbar">
         <div class="nav-logo">
-          <img src="img/KernelPanic.png" alt="logo" class="logo" />
+
+         <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo" />
+
+                
+
         </div>
         <input type="checkbox" id="menu-toggle" />
         <label for="menu-toggle" class="menu-icon">&#9776;</label>
@@ -38,7 +42,12 @@
           <button><a href="#grafico">Comece a consultar agora</a></button>
         </div>
         <div class="img-container">
-          <img src="img/site-image.png" alt="site-image" class="img" />
+
+          <img src="{{ url_for('static', filename='img/site-image.png') }}" alt="site-image" class="img" />
+          
+
+      
+
         </div>
       </div>
     </section>
@@ -47,7 +56,12 @@
       <div id="grafico">
         <div class="titulo">
           <h3>Balança comercial entre 2013 e 2023</h3>
-          <img src="img/KernelPanic.png" alt="logo" class="logo2" />
+
+          <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo2" />
+          
+
+         
+
         </div>
         <form>
           <div class="filtros-container">
@@ -107,7 +121,12 @@
       <div id="top5">
         <div class="titulo">
           <h3>Top 5 Produtos por Valor Agregado</h3>
-          <img src="img/KernelPanic.png" alt="logo" class="logo2" />
+
+          <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo2" />
+          
+
+         
+
         </div>
         <form>
           <div class="filtros-container">
