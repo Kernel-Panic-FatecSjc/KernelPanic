@@ -7,7 +7,7 @@
 ###  ⏳ Status do projeto: 1/3 Sprint ✅
 
 ## Visão Geral
-  Este projeto tem como objetivo desenvolver uma API para análise de dados das exportações do estado de São Paulo. A solução permitirá a extração e visualização de informações estratégicas sobre os produtos exportados, destinos e tendências históricas.
+  Este projeto tem como objetivo desenvolver uma API para análise de dados das exportações e importações do estado de São Paulo. A solução permitirá a extração e visualização de informações estratégicas sobre os produtos exportados, destinos e tendências históricas.
   
 ## Objetivo do produto
   O sistema será uma ferramenta interativa para auxiliar empresas e órgãos governamentais a entender melhor o panorama das exportações paulistas. Entre os principais recursos, destacam-se:
