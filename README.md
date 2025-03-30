@@ -99,13 +99,13 @@ Para o funcionamento do nosso sistema, você precisara das seguintes tecnologias
 </details>
 <br>
 
-## 👥 Equipe <a name="equipe"><a>
+## Equipe <a name="equipe"><a>
 |     Função    |           Nome            |                            LinkedIn                            |                      GitHub                       |
 | :----: | :-----------: | :-----------------------: | :------------------------------------------------------------: | :-----------------------------------------------: |
-| Scrum Master | Daniel Porto Renó Sás Piloto| [Linkedin](https://www.linkedin.com/in/eduardo-da-silva-fontes/)  | [GitHub](https://github.com/DuuhZero)           |
+| Scrum Master  | Daniel Porto Renó Sás Piloto| [Linkedin](https://www.linkedin.com/in/eduardo-da-silva-fontes/)  | [GitHub](https://github.com/DuuhZero)           |
 | Product Owner | Vitor Serpa da Silva |  [Linkedin](https://www.linkedin.com/in/eduardo-kuwahara-3b2267303/)  | [GitHub](https://github.com/EduardoKuwahara) |
 |Dev Team| Henry Vilela Silva Tito |  [Linkedin](https://www.linkedin.com/in/joão-pedro-frança-alves-de-souza-8700a62b3/)  | [GitHub](https://github.com/jofran2001)  |
-| Dev Team | Lucas Daniel |  [Linkedin](https://www.linkedin.com/in/joão-rossi-7311a0301/)  | [GitHub](https://github.com/rossilindo)    |
-| Dev Team | Miguel Tomio Toledo Nonaka |  [Linkedin](https://www.linkedin.com/in/paulo-almeida-3102452a7/)  | [GitHub](https://github.com/pauloalmeida46)    |
-| Dev Team | Paula Emy Tamay |  [Linkedin](https://www.linkedin.com/in/paulo-almeida-3102452a7/)  | [GitHub](https://github.com/pauloalmeida46)    |
-| Dev Team | Vinícius da Silva Leite |  [Linkedin](https://www.linkedin.com/in/paulo-almeida-3102452a7/)  | [GitHub](https://github.com/pauloalmeida46)    |
+| Dev Team      | Lucas Daniel |  [Linkedin](https://www.linkedin.com/in/joão-rossi-7311a0301/)  | [GitHub](https://github.com/rossilindo)    |
+| Dev Team      | Miguel Tomio Toledo Nonaka |  [Linkedin](https://www.linkedin.com/in/paulo-almeida-3102452a7/)  | [GitHub](https://github.com/pauloalmeida46)    |
+| Dev Team      | Paula Emy Tamay |  [Linkedin](https://www.linkedin.com/in/paulo-almeida-3102452a7/)  | [GitHub](https://github.com/pauloalmeida46)    |
+| Dev Team      | Vinícius da Silva Leite |  [Linkedin](https://www.linkedin.com/in/paulo-almeida-3102452a7/)  | [GitHub](https://github.com/pauloalmeida46)    |
