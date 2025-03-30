@@ -99,11 +99,11 @@ Para o funcionamento do nosso sistema, você precisara das seguintes tecnologias
 </details>
 <br>
 
-#Membros do grupo
-Equipe <a name="equipe"><a>
+##Membros do grupo
+Equipe <a name="equipe"></a>
 |     Função    |           Nome            |                            LinkedIn                            |                      GitHub                       |
 | :----: | :-----------: | :-----------------------: | :------------------------------------------------------------: | :-----------------------------------------------: |
-| Scrum Master  | Daniel Porto Renó Sás Piloto | Linkedin  | GitHub           |
+| Scrum Master  | Daniel Porto Renó Sás Piloto | Linkedin  | GitHub           |  
 | Product Owner | Vitor Serpa da Silva |  Linkedin  | GitHub |
 | Dev Team | Henry Vilela Silva Tito |  Linkedin  | GitHub  |
 | Dev Team | Lucas Daniel |  Linkedin  | GitHub    |
