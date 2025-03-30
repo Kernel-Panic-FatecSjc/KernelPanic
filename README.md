@@ -100,3 +100,14 @@ Para o funcionamento do nosso sistema, você precisara das seguintes tecnologias
 <br>
 
 #Membros do grupo
+Equipe <a name="equipe"><a>
+|     Função    |           Nome            |                            LinkedIn                            |                      GitHub                       |
+| :----: | :-----------: | :-----------------------: | :------------------------------------------------------------: | :-----------------------------------------------: |
+| Scrum Master  | Daniel Porto Renó Sás Piloto | Linkedin  | GitHub           |
+| Product Owner | Vitor Serpa da Silva |  Linkedin  | GitHub |
+| Dev Team | Henry Vilela Silva Tito |  Linkedin  | GitHub  |
+| Dev Team | Lucas Daniel |  Linkedin  | GitHub    |
+| Dev Team | Miguel Tomio Toledo Nonaka |  Linkedin  | GitHub    |
+| Dev Team | Paula Emy Tamay |  Linkedin  | GitHub    |
+| Dev Team | Vinícius da Silva Leite |  Linkedin  | GitHub    |
+
