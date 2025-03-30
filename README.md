@@ -21,8 +21,12 @@
   - Normalização e análise de dados entre os anos de 2013 e 2023.
   
 ## Metodologia utilizada
+  Para a confecção do produto foi empregado o framework de metodologia ágil Scrum, que consiste sumariamente dividir o desenvolvimento do projeto em Sprints, um conjunto de tarefas que devem ser executadas e desenvolvidas em um período pré-definido de tempo. Além disso, foi definido o Backlog do Produto, que são todas as funcionalidades que o software deverá ter com base nos requisitos levantados com o cliente. Uma vez aprovado por ele, para selecionar quais seriam as entregas das Sprints do projeto, primeiro foi definido o MVP de cada Sprint, que é uma versão do produto que prioriza as tarefas que trazem maior entrega de valor para o cliente. Então, a partir disso o Backlog do Produto foi dividido em 4 Backlog de Sprint.
+
 
 ## MVP's
+
+
 
 # Como rodar
 > _Os códigos e processos presentes neste readme possuem versão para WINDOWS_
@@ -94,3 +98,5 @@ Para o funcionamento do nosso sistema, você precisara das seguintes tecnologias
 
 </details>
 <br>
+
+#Membros do grupo
