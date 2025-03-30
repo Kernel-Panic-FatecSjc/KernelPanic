@@ -100,12 +100,12 @@ Para o funcionamento do nosso sistema, você precisara das seguintes tecnologias
 <br>
 
 ## Equipe <a name="equipe"><a>
-|     Função    |           Nome            |                            LinkedIn                            |                      GitHub                       |
+|  Foto        |     Função    |           Nome            |                            LinkedIn                            |                      GitHub                       |
 | :----: | :-----------: | :-----------------------: | :------------------------------------------------------------: | :-----------------------------------------------: |
-| Scrum Master  | Daniel Porto Renó Sás Piloto| [Linkedin](https://www.linkedin.com/in/eduardo-da-silva-fontes/)  | [GitHub](https://github.com/DuuhZero)           |
-| Product Owner | Vitor Serpa da Silva |  [Linkedin](https://www.linkedin.com/in/eduardo-kuwahara-3b2267303/)  | [GitHub](https://github.com/EduardoKuwahara) |
-|Dev Team| Henry Vilela Silva Tito |  [Linkedin](https://www.linkedin.com/in/joão-pedro-frança-alves-de-souza-8700a62b3/)  | [GitHub](https://github.com/jofran2001)  |
-| Dev Team      | Lucas Daniel |  [Linkedin](https://www.linkedin.com/in/joão-rossi-7311a0301/)  | [GitHub](https://github.com/rossilindo)    |
-| Dev Team      | Miguel Tomio Toledo Nonaka |  [Linkedin](https://www.linkedin.com/in/paulo-almeida-3102452a7/)  | [GitHub](https://github.com/pauloalmeida46)    |
-| Dev Team      | Paula Emy Tamay |  [Linkedin](https://www.linkedin.com/in/paulo-almeida-3102452a7/)  | [GitHub](https://github.com/pauloalmeida46)    |
-| Dev Team      | Vinícius da Silva Leite |  [Linkedin](https://www.linkedin.com/in/paulo-almeida-3102452a7/)  | [GitHub](https://github.com/pauloalmeida46)    |
+| <img src="https://avatars.githubusercontent.com/u/162122368?v=4" width="75px"> | Scrum Master  | Daniel Porto Renó Sás Piloto | [Linkedin](https://www.linkedin.com/in/eduardo-da-silva-fontes/)  | [GitHub](https://github.com/danprsp)           |
+| <img src="https://avatars.githubusercontent.com/u/106409918?v=4" width="75px"> | Product Owner | Vitor Serpa da Silva |  [Linkedin](https://www.linkedin.com/in/vitor-serpa-925b46322/)  | [GitHub](https://github.com/VitorSerpa) |
+| <img src="https://avatars.githubusercontent.com/u/140865436?v=4" width="75px">|Dev Team| Henry Vilela Silva Tito |  [Linkedin](https://www.linkedin.com/in/joão-pedro-frança-alves-de-souza-8700a62b3/)  | [GitHub](https://github.com/HenryTito)  |
+| <img src="https://avatars.githubusercontent.com/u/202815299?v=4" width="75px"> | Dev Team      | Lucas Daniel |  [Linkedin](https://www.linkedin.com/in/joão-rossi-7311a0301/)  | [GitHub](https://github.com/orgs/Kernel-Panic-FatecSjc/people/lucasdaniel0122)    |
+| <img src="https://avatars.githubusercontent.com/u/144951743?v=4" width="75px"> | Dev Team      | Miguel Tomio Toledo Nonaka |  [Linkedin](https://www.linkedin.com/notifications/?filter=all)  | [GitHub](https://github.com/miguelnonaka)    |
+| <img src="https://avatars.githubusercontent.com/u/102493225?v=4" width="75px"> | Dev Team      | Paula Emy Tamay |  [Linkedin](https://www.linkedin.com/in/paulo-almeida-3102452a7/)  | [GitHub](https://github.com/PaulaEmy)    |
+| <img src="https://avatars.githubusercontent.com/u/163305926?v=4" width="75px"> | Dev Team      | Vinícius da Silva Leite |  [Linkedin](https://www.linkedin.com/in/paulo-almeida-3102452a7/)  | [GitHub](https://github.com/vinislvleite)    |
