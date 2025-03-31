@@ -33,7 +33,7 @@
 | 5 | 🔴 Alta | Eu como usuário, no gráfico de linha, quero filtro por pais destino | 8 | 2 | Filtro pelo pais destino |
 | 6 | 🔴 Alta | Eu como usuário, no gráfico de linha, quero filtro por código NCM | 8 | 2 | Filtro por código NCM |
 | 7 | 🔴 Alta | Eu como usuário, no gráfico de linha, quero filtro de valor agregado | 8 | 2 | Filtro por valor agregado |
-| 8 | 🔴 Alta | Eu como usuário, quero um gráfico de funil para visualização das 5 cargas com maior valor agregado por municipio Paulista. | 8 | 3 | Visualização da carga com maior valor agregado |
+| 8 | 🔴 Alta | Eu como usuário, quero um gráfico de funil para visualização das 5 cargas com maior valor agregado por municipio Paulista. | 20 | 3 | Visualização da carga com maior valor agregado |
 | 9 | 🔴 Alta | Eu como usuário, no gráfico dos top 5 cargas, quero filtro por código NCM | 8 | 3 | Filtro por código NCM |
 | 10 | 🔴 Alta | Eu como usuário, no gráfico dos top 5 cargas, quero filtro de país destino | 8 | 3 | Filtro pelo país destino |
 | 11 | 🟠 Média | Eu como usuário, no gráfico dos top 5 cargas, quero filtro de cidade origem. | 8 | 3 | Filtro pela cidade de origem |
