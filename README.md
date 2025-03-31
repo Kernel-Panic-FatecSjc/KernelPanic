@@ -64,6 +64,12 @@
 
 
 
+# Google Colab: 
+https://colab.research.google.com/drive/1O28wrwHK5T3kbF00_QEZJqcLTJb21rAI?usp=sharing
+
+
+
+
 # Como rodar
 > _Os códigos e processos presentes neste readme possuem versão para WINDOWS_
 ## O que será necessário
