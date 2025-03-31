@@ -62,6 +62,9 @@
 
 ## MVP's
 
+### Google Colab: https://colab.research.google.com/drive/1O28wrwHK5T3kbF00_QEZJqcLTJb21rAI?usp=sharing
+
+
 
 
 # Como rodar
