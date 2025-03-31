@@ -104,8 +104,8 @@
             </div>
 
             <div class="filtros-coluna search-box">
-              <input type="text" class="caixa" placeholder="Município" />
-              <input type="text" class="caixa" placeholder="Carga" />
+              <input type="text" class="caixa" name="municipio" placeholder="Município" />
+              <input type="text" class="caixa" name="carga" placeholder="Carga" />
               <button type="submit">Aplicar</button>
             </div>
           </div>
@@ -142,18 +142,24 @@
                 <option value="2022">2022</option>
                 <option value="2023">2023</option>
               </select>
+            
+              <label for="pais">País destino:</label>
+              <select name="pais">
+                <option value="eua">EUA</option>
+                <option value="china">China</option>
+              </select>
             </div>
+
             <div class="filtros-coluna search-box">
               <input type="text" class="caixa" placeholder="Município" />
               <input type="text" class="caixa" placeholder="Carga" />
-              <input type="text" class="caixa" placeholder="País Destino" />
               <button type="submit">Aplicar</button>
             </div>
           </div>
         </form>
       </div>
       <section class="graficos">
-        <img src="{{ url_for('static', filename='img/gráfico 2.jpg') }}" alt="Gráfico Funil" class="graficos-1"/>
+        <img src="{{ url_for('static', filename='img/gráfico 3.png') }}" alt="Gráfico Funil" class="graficos-1"/>
       </section>
     </section>
   </body>
