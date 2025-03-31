@@ -20,6 +20,27 @@
 
   - Normalização e análise de dados entre os anos de 2013 e 2023.
 
+<span id="backlog">
+
+## 📋 Backlog / User Stories
+
+| Rank | Prioridade | User Story | Estimativa | Sprint | Requisitos do Parceiro |
+|:----:|:----------:|:----------:|:----------:|:------:|:-----------------------|
+| 1 | 🔴 Alta | Eu como cliente, quero ter acesso aos códigos de normalização e formatação das planilhas de exportações internacionais dos municípios Paulistas dos anos de 2013 até 2023 | 20 | 1 | Planilhas dos anos de 2013 até 2023 normalizadas |
+| 2 | 🔴 Alta | Eu como cliente, quero poder visualizar o site com os gráficos para visualizar a interface do site e o desenvolvimento do projeto | 20 | 1 | Visualização dos site com os gráficos ainda sem dados / dados fictícios  |
+| 3 | 🔴 Alta | Eu como usuário, quero um gráfico de linha para visualização da evolução da balança comercial das exportações dos municipios Paulistas do ano de 2013 até 2023 | 20 | 2 | Visualização da balança comercial de apenas um município por vez |
+| 4 | 🔴 Alta | Eu como usuário, no gráfico de linha, quero filtro de cidade origem. | 8 | 2 | Filtro pela cidade de origem |
+| 5 | 🔴 Alta | Eu como usuário, no gráfico de linha, quero filtro por pais destino | 8 | 2 | Filtro pelo pais destino |
+| 6 | 🔴 Alta | Eu como usuário, no gráfico de linha, quero filtro por código NCM | 8 | 2 | Filtro por código NCM |
+| 7 | 🔴 Alta | Eu como usuário, no gráfico de linha, quero filtro de valor agregado | 8 | 2 | Filtro por valor agregado |
+| 8 | 🔴 Alta | Eu como usuário, quero um gráfico de funil para visualização das 5 cargas com maior valor agregado por municipio Paulista. | 8 | 3 | Visualização da carga com maior valor agregado |
+| 9 | 🔴 Alta | Eu como usuário, no gráfico dos top 5 cargas, quero filtro por código NCM | 8 | 3 | Filtro por código NCM |
+| 10 | 🔴 Alta | Eu como usuário, no gráfico dos top 5 cargas, quero filtro de país destino | 8 | 3 | Filtro pelo país destino |
+| 11 | 🟠 Média | Eu como usuário, no gráfico dos top 5 cargas, quero filtro de cidade origem. | 8 | 3 | Filtro pela cidade de origem |
+| 12 | 🟠 Média | Eu como usuário, no gráfico dos top 5 cargas, quero filtro de valor agregado | 8 | 3 | Filtro por valor agregado |
+| 13 | 🟡 Baixa | Eu como usuário, no gráfico dos top 5 cargas, quero filtro por ano da exportação. | 3 | 3 | Filtro pelo ano de exportação |
+
+
 ## Tecnlogias utilizadas
 <div align="center">
 <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white&color=043873">
