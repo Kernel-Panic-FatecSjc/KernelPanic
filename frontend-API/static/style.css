@@ -178,6 +178,28 @@ label {
   font-weight: bold;
 }
 
+.graficos {
+  display: flex;
+  min-width: 300px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.graficos-1 {
+  margin-top: 270px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.graficos-2 {
+  margin-top: 270px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 .grafico1 {
   border: none;
   width: 80%;
@@ -476,6 +498,18 @@ input[type="text"] {
   .grafico1 button {
     width: 100%;
     margin-top: 7%;
+  }
+
+  .graficos {
+    width: 100%;
+  }
+
+  .graficos-1 {
+    margin-top: 20px;
+  }
+
+  .graficos-2 {
+    margin-top: 20px;
   }
 
   .filtros-container {

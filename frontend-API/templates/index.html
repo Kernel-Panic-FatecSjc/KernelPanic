@@ -20,7 +20,7 @@
         <label for="menu-toggle" class="menu-icon">&#9776;</label>
         <div class="sidebar">
           <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="sobre.html">Sobre</a></li>
             <button><a href="#grafico">Balança Comercial</a></button>
             <button><a href="#top5">Top 5 Produtos</a></button>
@@ -54,14 +54,13 @@
 
     <section class="grafico1">
       <div id="grafico">
-        <div class="titulo">
-          <h3>Balança comercial entre 2013 e 2023</h3>
-
-          <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo2" />
-          
-
-         
-
+        <div class="titulo-logo">
+          <div class="titulo">
+            <h3 class="titulo-texto">Balança Comercial entre 2013 e 2023</h3>
+          </div>
+          <div class="logo-container">
+            <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo2" />
+          </div>
         </div>
         <form>
           <div class="filtros-container">
@@ -112,21 +111,19 @@
           </div>
         </form>
       </div>
-      <p>
-        Gráfico mostrando evolução da balança comercial entre os anos de 2013 e
-        2023
-      </p>
+      <section class="graficos">
+        <img src= "{{ url_for('static', filename='img/gráfico 1.jpg') }}" alt="Gráfico Linha" class="graficos-2">
+      </section>
     </section>
     <section class="grafico1">
       <div id="top5">
-        <div class="titulo">
-          <h3>Top 5 Produtos por Valor Agregado</h3>
-
-          <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo2" />
-          
-
-         
-
+        <div class="titulo-logo">
+          <div class="titulo">
+            <h3 class="titulo-texto">Top 5 Produtos por Valor Agregado</h3>
+          </div>
+          <div class="logo-container">
+            <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo2" />
+          </div>
         </div>
         <form>
           <div class="filtros-container">
@@ -155,10 +152,9 @@
           </div>
         </form>
       </div>
-      <p>
-        Gráfico mostrando Top produtos por valor agregado (Valor FOB / Kg
-        Liquido)
-      </p>
+      <section class="graficos">
+        <img src="{{ url_for('static', filename='img/gráfico 2.jpg') }}" alt="Gráfico Funil" class="graficos-1"/>
+      </section>
     </section>
   </body>
 </html>
