@@ -3,29 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='normalize.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
     <title>Gráfico de Exportações</title>
   </head>
   <body>
     <header>
       <nav class="navbar">
-        <div class="nav-logo">
+        <a href="#" class="nav-logo">
+          <img
+            src="{{ url_for('static', filename='img/KernelPanic.png') }}"
+            alt="logo"
+            class="logo"
+          />
+        </a>
 
-         <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo" />
-
-                
-
-        </div>
         <input type="checkbox" id="menu-toggle" />
         <label for="menu-toggle" class="menu-icon">&#9776;</label>
-        <div class="sidebar">
+        <nav class="sidebar">
           <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="sobre.html">Sobre</a></li>
-            <button><a href="#grafico">Balança Comercial</a></button>
-            <button><a href="#top5">Top 5 Produtos</a></button>
+            <a href="#grafico" class="button">Balança Comercial</a>
+            <a href="#top5" class="button">Top 5 Produtos</a>
           </ul>
-        </div>
+        </nav>
       </nav>
     </header>
 
@@ -42,12 +50,11 @@
           <button><a href="#grafico">Comece a consultar agora</a></button>
         </div>
         <div class="img-container">
-
-          <img src="{{ url_for('static', filename='img/site-image.png') }}" alt="site-image" class="img" />
-          
-
-      
-
+          <img
+            src="{{ url_for('static', filename='img/site-image.png') }}"
+            alt="site-image"
+            class="img"
+          />
         </div>
       </div>
     </section>
@@ -59,7 +66,11 @@
             <h3 class="titulo-texto">Balança Comercial entre 2013 e 2023</h3>
           </div>
           <div class="logo-container">
-            <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo2" />
+            <img
+              src="{{ url_for('static', filename='img/KernelPanic.png') }}"
+              alt="logo"
+              class="logo2"
+            />
           </div>
         </div>
         <form>
@@ -104,15 +115,29 @@
             </div>
 
             <div class="filtros-coluna search-box">
-              <input type="text" class="caixa" name="municipio" placeholder="Município" />
-              <input type="text" class="caixa" name="carga" placeholder="Carga" />
+              <input
+                type="text"
+                class="caixa"
+                name="municipio"
+                placeholder="Município"
+              />
+              <input
+                type="text"
+                class="caixa"
+                name="carga"
+                placeholder="Carga"
+              />
               <button type="submit">Aplicar</button>
             </div>
           </div>
         </form>
       </div>
       <section class="graficos">
-        <img src= "{{ url_for('static', filename='img/gráfico 1.jpg') }}" alt="Gráfico Linha" class="graficos-2">
+        <img
+          src="{{ url_for('static', filename='img/gráfico 1.jpg') }}"
+          alt="Gráfico Linha"
+          class="graficos-2"
+        />
       </section>
     </section>
     <section class="grafico1">
@@ -122,7 +147,11 @@
             <h3 class="titulo-texto">Top 5 Produtos por Valor Agregado</h3>
           </div>
           <div class="logo-container">
-            <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo2" />
+            <img
+              src="{{ url_for('static', filename='img/KernelPanic.png') }}"
+              alt="logo"
+              class="logo2"
+            />
           </div>
         </div>
         <form>
@@ -142,7 +171,7 @@
                 <option value="2022">2022</option>
                 <option value="2023">2023</option>
               </select>
-            
+
               <label for="pais">País destino:</label>
               <select name="pais">
                 <option value="eua">EUA</option>
@@ -159,7 +188,11 @@
         </form>
       </div>
       <section class="graficos">
-        <img src="{{ url_for('static', filename='img/gráfico 3.png') }}" alt="Gráfico Funil" class="graficos-1"/>
+        <img
+          src="{{ url_for('static', filename='img/gráfico 3.png') }}"
+          alt="Gráfico Funil"
+          class="graficos-1"
+        />
       </section>
     </section>
   </body>

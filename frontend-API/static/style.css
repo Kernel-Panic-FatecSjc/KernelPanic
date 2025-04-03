@@ -11,10 +11,10 @@ body {
   background-color: #043873;
   border: 1px solid #043873;
   box-sizing: border-box;
-  height: 1117px;
+  height: 100%;
   line-height: normal;
   margin: 0;
-  min-height: 260vh;
+  min-height: 300vh;
   font-family: "Space Grotesk";
 }
 
@@ -36,15 +36,14 @@ header {
   align-items: center;
 }
 
-.navbar button {
-  font-family: "Space Grotesk", sans-serif;
-}
-
 .nav-links {
   list-style: none;
-  margin: 10;
+  margin: 10px;
   padding: 0;
   display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: -20px;
 }
 
 .nav-links li {
@@ -53,26 +52,32 @@ header {
   font-size: 80%;
 }
 
+.button {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #043872;
+  margin: 10px;
+  padding: 15px 25px;
+  font-size: 80%;
+  transition: background-color 0.3s ease;
+}
+
+a.button {
+  border-color: #f3f3f3;
+  border-width: 0.5px;
+  padding: 15px 35px;
+  border-style: double;
+  border-radius: 12px;
+}
+
 .nav-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
-.nav-links button {
-  background-color: #043872;
-  display: flex;
-  margin: 10px;
-  border-color: #f3f3f3;
-  border-width: 0.5px;
-  padding: 15px 35px;
-  border-style: double;
-  border-radius: 12px;
-  font-size: 80%;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
+a.button:hover {
   background-color: #0e4f99;
 }
 
@@ -180,14 +185,22 @@ label {
 
 .graficos {
   display: flex;
-  min-width: 300px;
-  flex: 1;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.graficos img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .graficos-1 {
-  margin-top: 230px;
+  margin-top: 270px;
   max-width: 100%;
   height: auto;
   border-radius: 8px;
@@ -204,7 +217,6 @@ label {
   border: none;
   width: 80%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   color: #e1d8d8;
@@ -348,6 +360,7 @@ input[type="text"] {
   body {
     width: 100%;
     height: 100%;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -357,7 +370,6 @@ input[type="text"] {
   .menu-icon {
     display: block;
     position: fixed;
-
     right: auto;
     font-size: 24px;
     color: white;
@@ -416,16 +428,16 @@ input[type="text"] {
     font-weight: bold;
   }
 
-  .sidebar .nav-links button {
-    background-color: transparent;
-    border: 1px solid #f3f3f3;
-    border-radius: 12px;
-    width: 160px;
+  .sidebar .nav-links a.button {
+    margin: 10px;
+    display: flex;
     justify-content: center;
     padding: 10px 20px;
-    color: white;
-    font-size: 13px;
+    border: 1px solid #f3f3f3;
+    border-radius: 12px;
+    width: 120px;
     cursor: pointer;
+    font-size: 13px;
     transition: background-color 0.3s ease;
   }
 
@@ -485,9 +497,12 @@ input[type="text"] {
   }
 
   .grafico1 {
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     margin-left: 0;
-    padding: 0 20px;
+    padding: 20px;
+    margin: 0 auto;
   }
 
   .grafico1 p {
@@ -502,8 +517,19 @@ input[type="text"] {
 
   .graficos {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
   }
 
+  .graficos img {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 10px;
+  }
   .graficos-1 {
     margin-top: 20px;
   }
