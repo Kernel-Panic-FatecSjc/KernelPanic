@@ -36,6 +36,14 @@ header {
   align-items: center;
 }
 
+.welcomePage{
+  height: 100vh;
+}
+
+button{
+  cursor: pointer;
+}
+
 .nav-links {
   list-style: none;
   margin: 10px;
@@ -49,7 +57,7 @@ header {
 .nav-links li {
   margin: 0 20px;
   margin-top: 30px;
-  font-size: 80%;
+  font-size: 20px;
 }
 
 .button {
@@ -96,7 +104,7 @@ a.button:hover {
   justify-content: flex-start;
   align-items: center;
   color: #e1d8d8;
-  margin-top: 150px;
+  margin-top: 15rem;
   margin-left: 10%;
   text-align: left;
   gap: 35px;
@@ -142,6 +150,17 @@ label {
   color: #fff;
   text-align: left;
   margin-bottom: 5px;
+}
+
+
+#chart-container {
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .img-container {
@@ -227,7 +246,7 @@ label {
   box-sizing: border-box;
 }
 
-.grafico1 button {
+.buttonAplicar {
   width: fit-content;
   border-radius: 14px;
   border-style: none;
@@ -241,7 +260,7 @@ label {
   font-size: 16px;
   color: #043873;
   font-family: "Space Grotesk", sans-serif;
-  margin-top: 8px;
+  margin-top: 14px;
   margin-left: 2px;
 }
 
