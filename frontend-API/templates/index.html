@@ -11,53 +11,58 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
     />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Gráfico de Exportações</title>
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <a href="#" class="nav-logo">
-          <img
-            src="{{ url_for('static', filename='img/KernelPanic.png') }}"
-            alt="logo"
-            class="logo"
-          />
-        </a>
+    <div class="welcomePage">
 
-        <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
-        <nav class="sidebar">
-          <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <a href="#grafico" class="button">Balança Comercial</a>
-            <a href="#top5" class="button">Top 5 Produtos</a>
-          </ul>
+      <header>
+        <nav class="navbar">
+          <a href="#" class="nav-logo">
+            <img
+              src="{{ url_for('static', filename='img/KernelPanic.png') }}"
+              alt="logo"
+              class="logo"
+            />
+          </a>
+
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+          <nav class="sidebar">
+            <ul class="nav-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="sobre.html">Sobre</a></li>
+              <li><a href="#grafico" class="button">Balança Comercial</a></li>
+              <li><a href="#top5" class="button">Top 5 Produtos</a></li>
+            </ul>
+          </nav>
         </nav>
-      </nav>
-    </header>
+      </header>
 
-    <section class="sobre">
-      <div class="conteudo">
-        <div class="texto">
-          <h3>Gráficos de exportação</h3>
-          <p>
-            Um projeto de criação de uma plataforma para filtrar e exibir dados
-            de exportação de São Paulo, permitindo buscas por produto, destino e
-            período. A interface apresentará as informações de forma clara, com
-            gráficos e tabelas.
-          </p>
-          <button><a href="#grafico">Comece a consultar agora</a></button>
+      <section class="sobre">
+        <div class="conteudo">
+          <div class="texto">
+            <h3>Gráficos de exportação</h3>
+            <p>
+              Um projeto de criação de uma plataforma para filtrar e exibir dados
+              de exportação de São Paulo, permitindo buscas por produto, destino e
+              período. A interface apresentará as informações de forma clara, com
+              gráficos e tabelas.
+            </p>
+            <button><a href="#grafico">Comece a consultar agora</a></button>
+          </div>
+          <div class="img-container">
+            <img
+              src="{{ url_for('static', filename='img/site-image.png') }}"
+              alt="site-image"
+              class="img"
+            />
+          </div>
         </div>
-        <div class="img-container">
-          <img
-            src="{{ url_for('static', filename='img/site-image.png') }}"
-            alt="site-image"
-            class="img"
-          />
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
+
 
     <section class="grafico1">
       <div id="grafico">
@@ -109,12 +114,11 @@
 
               <label for="pais">País destino:</label>
               <select name="pais">
-                <option value="eua">EUA</option>
-                <option value="china">China</option>
+                <option>Paises</option>
               </select>
             </div>
 
-            <div class="filtros-coluna search-box">
+            <div class="search-box">
               <input
                 type="text"
                 class="caixa"
@@ -127,17 +131,15 @@
                 name="carga"
                 placeholder="Carga"
               />
-              <button type="submit">Aplicar</button>
+              <button type="submit" class="buttonAplicar">Aplicar</button>
             </div>
           </div>
         </form>
       </div>
       <section class="graficos">
-        <img
-          src="{{ url_for('static', filename='img/gráfico 1.jpg') }}"
-          alt="Gráfico Linha"
-          class="graficos-2"
-        />
+        <div id="chart-container">
+          <canvas id="lineChart"></canvas>
+        </div>
       </section>
     </section>
     <section class="grafico1">
@@ -182,7 +184,7 @@
             <div class="filtros-coluna search-box">
               <input type="text" class="caixa" placeholder="Município" />
               <input type="text" class="caixa" placeholder="Carga" />
-              <button type="submit">Aplicar</button>
+              <button type="submit" class="buttonAplicar">Aplicar</button>
             </div>
           </div>
         </form>
@@ -196,4 +198,5 @@
       </section>
     </section>
   </body>
+  <script src="{{ url_for('static', filename='js/lineChart.js') }}"></script>
 </html>
