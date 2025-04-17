@@ -1,72 +1,73 @@
 from flask import Flask, render_template, request, jsonify
-import mysql.connector
+from query import montar_query
+import pymysql
 
 app = Flask(__name__)
 
-
-#atualizar os dados com as reais configurações do banco
-
-app = Flask(__name__)
-
-#Dados para conectar ao banco de dados
+# Dados para conectar ao banco de dados
 def get_db_connection():
-    return mysql.connector.connect(
+    conn = pymysql.connect(
         host='localhost',
         user='root',
-        password='root123',
-        database='nomedobanco'
+        password='1234',
+        database='api',
+        cursorclass=pymysql.cursors.DictCursor 
     )
-
-connection = get_db_connection()
+    print("COnexao feita!")
+    return conn
 
 @app.route("/")
 def website():
     return render_template('index.html')
 
-
-#REcebimento dos dados via POST
+# Recebimento dos dados via POST
 @app.route('/filtros', methods=['POST'])
 def filtros_dados():
-    dados = request.get_json()
-    municipio = dados.get('municipio')
-    pais = dados.get ('pais')
-    ano = dados.get ('ano')
-    carga = dados.get ('carga')
+    filtros = request.get_json()
 
-    query = """
-        SELECT 
-            CO_ANO, 
-            CO_UF, 
-            CO_PAIS, 
-            CO_NCM, 
-            KG_LIQUIDO, 
-            VL_FOB, 
-            VALOR_AGREGADO 
-        FROM comex_registro 
-        WHERE 1=1
-    """
-    
-    filtros = []
+    try:
+        query, params = montar_query(filtros)
+    except ValueError as e:
+        return jsonify({'error': str(e)}), 400
 
-    if municipio:
-        query += "AND CO_UF = %s"
-        filtros.append(municipio)
-    if pais:
-        query += " AND CO_PAIS = %s"
-        filtros.append(pais)
-    if ano:
-        query += " AND ANO = %s"
-        filtros.append(ano)
-    if carga:
-        query += " AND CO_NCM = %s"
-        filtros.append(carga)
-    
-    cursor = connection.cursor(dictionary=True)
-    cursor.execute(query, filtros)
-    resultados = cursor.fetchall()
-    cursor.close()
+    conn = get_db_connection()
+    with conn.cursor() as cursor:
+        cursor.execute(query, params)
+        resultados = cursor.fetchall()
+    conn.close()
 
+    # Se estiver agrupando por mês, retorna lista com dados por mês
+    if "mes" not in filtros:
+        resposta = []
+        for row in resultados:
+            resposta.append({
+                "tipo": filtros.get("tipo"),
+                "ano": filtros.get("ano"),
+                "mes": row["mes"],
+                "municipio": filtros.get("municipio"),
+                "pais": filtros.get("pais"),
+                "ncm": filtros.get("ncm"),
+                "total_valor_agregado": row["total_valor_agregado"],
+                "total_kg_liquido": row["total_kg_liquido"],
+                "total_valor_fob": row["total_valor_fob"],
+                "total_registros": row["total_registros"]
+            })
+    else:
+        row = resultados[0]
+        resposta = {
+            "tipo": filtros.get("tipo"),
+            "ano": filtros.get("ano"),
+            "mes": filtros.get("mes"),
+            "municipio": filtros.get("municipio"),
+            "pais": filtros.get("pais"),
+            "ncm": filtros.get("ncm"),
+            "total_valor_agregado": row["total_valor_agregado"],
+            "total_kg_liquido": row["total_kg_liquido"],
+            "total_valor_fob": row["total_valor_fob"],
+            "total_registros": row["total_registros"]
+        }
+
+    return jsonify(resposta)
 
 if __name__ == '__main__':
-    app.run(debug =True)
-
+    app.run(debug=True)
