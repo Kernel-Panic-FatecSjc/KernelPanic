@@ -1,202 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/normalize.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Gráfico de Exportações</title>
-  </head>
-  <body>
-    <div class="welcomePage">
 
-      <header>
-        <nav class="navbar">
-          <a href="#" class="nav-logo">
-            <img
-              src="{{ url_for('static', filename='img/KernelPanic.png') }}"
-              alt="logo"
-              class="logo"
-            />
-          </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Gráfico de Exportações</title>
+</head>
 
-          <input type="checkbox" id="menu-toggle" />
-          <label for="menu-toggle" class="menu-icon">&#9776;</label>
-          <nav class="sidebar">
-            <ul class="nav-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="sobre.html">Sobre</a></li>
-              <li><a href="#grafico" class="button">Balança Comercial</a></li>
-              <li><a href="#top5" class="button">Top 5 Produtos</a></li>
-            </ul>
-          </nav>
+<body>
+  <div class="welcomePage">
+
+    <header>
+      <nav class="navbar">
+        <a href="#" class="nav-logo">
+          <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo" />
+        </a>
+
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <nav class="sidebar">
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="#grafico" class="button">Balança Comercial</a></li>
+            <li><a href="#top5" class="button">Top 5 Produtos</a></li>
+          </ul>
         </nav>
-      </header>
+      </nav>
+    </header>
 
-      <section class="sobre">
-        <div class="conteudo">
-          <div class="texto">
-            <h3>Gráficos de exportação</h3>
-            <p>
-              Um projeto de criação de uma plataforma para filtrar e exibir dados
-              de exportação de São Paulo, permitindo buscas por produto, destino e
-              período. A interface apresentará as informações de forma clara, com
-              gráficos e tabelas.
-            </p>
-            <button><a href="#grafico">Comece a consultar agora</a></button>
+    <section class="sobre">
+      <div class="conteudo">
+        <div class="texto">
+          <h3>Gráficos de exportação</h3>
+          <p>
+            Um projeto de criação de uma plataforma para filtrar e exibir dados
+            de exportação de São Paulo, permitindo buscas por produto, destino e
+            período. A interface apresentará as informações de forma clara, com
+            gráficos e tabelas.
+          </p>
+          <button><a href="#grafico">Comece a consultar agora</a></button>
+        </div>
+        <div class="img-container">
+          <img src="{{ url_for('static', filename='img/site-image.png') }}" alt="site-image" class="img" />
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <section class="grafico1">
+    <div id="grafico">
+      <div class="titulo-logo">
+        <div class="titulo">
+          <h3 class="titulo-texto">Balança Comercial entre 2013 e 2023</h3>
+        </div>
+        <div class="logo-container">
+          <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo2" />
+        </div>
+      </div>
+      <form>
+        <div class="filtros-container">
+          <div class="filtros-coluna">
+            <label for="ano">Ano:</label>
+            <select name="ano">
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+            </select>
+
+            <label for="mes">Mês:</label>
+            <select name="mes">
+              <option value="Janeiro">Janeiro</option>
+              <option value="Fevereiro">Fevereiro</option>
+              <option value="Março">Março</option>
+              <option value="Abril">Abril</option>
+              <option value="Maio">Maio</option>
+              <option value="Junho">Junho</option>
+              <option value="Julho">Julho</option>
+              <option value="Agosto">Agosto</option>
+              <option value="Setembro">Setembro</option>
+              <option value="Outubro">Outubro</option>
+              <option value="Novembro">Novembro</option>
+              <option value="Dezembro">Dezembro</option>
+            </select>
+
+            <label for="pais">País destino:</label>
+            <select name="pais">
+              <option>Paises</option>
+            </select>
           </div>
-          <div class="img-container">
-            <img
-              src="{{ url_for('static', filename='img/site-image.png') }}"
-              alt="site-image"
-              class="img"
-            />
+
+          <div class="search-box">
+            <input type="text" class="caixa" name="municipio" placeholder="Município" />
+            <input type="text" class="caixa" name="carga" placeholder="Carga" />
+            <button type="submit" class="buttonAplicar">Aplicar</button>
           </div>
         </div>
-      </section>
+      </form>
     </div>
-
-
-    <section class="grafico1">
-      <div id="grafico">
-        <div class="titulo-logo">
-          <div class="titulo">
-            <h3 class="titulo-texto">Balança Comercial entre 2013 e 2023</h3>
-          </div>
-          <div class="logo-container">
-            <img
-              src="{{ url_for('static', filename='img/KernelPanic.png') }}"
-              alt="logo"
-              class="logo2"
-            />
-          </div>
-        </div>
-        <form>
-          <div class="filtros-container">
-            <div class="filtros-coluna">
-              <label for="ano">Ano:</label>
-              <select name="ano">
-                <option value="2013">2013</option>
-                <option value="2014">2014</option>
-                <option value="2015">2015</option>
-                <option value="2016">2016</option>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-              </select>
-
-              <label for="mes">Mês:</label>
-              <select name="mes">
-                <option value="Janeiro">Janeiro</option>
-                <option value="Fevereiro">Fevereiro</option>
-                <option value="Março">Março</option>
-                <option value="Abril">Abril</option>
-                <option value="Maio">Maio</option>
-                <option value="Junho">Junho</option>
-                <option value="Julho">Julho</option>
-                <option value="Agosto">Agosto</option>
-                <option value="Setembro">Setembro</option>
-                <option value="Outubro">Outubro</option>
-                <option value="Novembro">Novembro</option>
-                <option value="Dezembro">Dezembro</option>
-              </select>
-
-              <label for="pais">País destino:</label>
-              <select name="pais">
-                <option>Paises</option>
-              </select>
-            </div>
-
-            <div class="search-box">
-              <input
-                type="text"
-                class="caixa"
-                name="municipio"
-                placeholder="Município"
-              />
-              <input
-                type="text"
-                class="caixa"
-                name="carga"
-                placeholder="Carga"
-              />
-              <button type="submit" class="buttonAplicar">Aplicar</button>
-            </div>
-          </div>
-        </form>
+    <section class="graficos">
+      <div id="chart-container">
+        <canvas id="lineChart"></canvas>
       </div>
-      <section class="graficos">
-        <div id="chart-container">
-          <canvas id="lineChart"></canvas>
-        </div>
-      </section>
     </section>
-    <section class="grafico1">
-      <div id="top5">
-        <div class="titulo-logo">
-          <div class="titulo">
-            <h3 class="titulo-texto">Top 5 Produtos por Valor Agregado</h3>
-          </div>
-          <div class="logo-container">
-            <img
-              src="{{ url_for('static', filename='img/KernelPanic.png') }}"
-              alt="logo"
-              class="logo2"
-            />
-          </div>
+  </section>
+  <section class="grafico1">
+    <div id="top5">
+      <div class="titulo-logo">
+        <div class="titulo">
+          <h3 class="titulo-texto">Top 5 Produtos por Valor Agregado</h3>
         </div>
-        <form>
-          <div class="filtros-container">
-            <div class="filtros-coluna">
-              <label for="ano">Ano:</label>
-              <select name="ano">
-                <option value="2013">2013</option>
-                <option value="2014">2014</option>
-                <option value="2015">2015</option>
-                <option value="2016">2016</option>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-              </select>
-
-              <label for="pais">País destino:</label>
-              <select name="pais">
-                <option value="eua">EUA</option>
-                <option value="china">China</option>
-              </select>
-            </div>
-
-            <div class="filtros-coluna search-box">
-              <input type="text" class="caixa" placeholder="Município" />
-              <input type="text" class="caixa" placeholder="Carga" />
-              <button type="submit" class="buttonAplicar">Aplicar</button>
-            </div>
-          </div>
-        </form>
+        <div class="logo-container">
+          <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo2" />
+        </div>
       </div>
-      <section class="graficos">
-        <img
-          src="{{ url_for('static', filename='img/gráfico 3.png') }}"
-          alt="Gráfico Funil"
-          class="graficos-1"
-        />
-      </section>
+      <form>
+        <div class="filtros-container">
+          <div class="filtros-coluna">
+            <label for="ano">Ano:</label>
+            <select name="ano">
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+            </select>
+
+            <label for="mes">Mês:</label>
+            <select name="mes">
+              <option value="Janeiro">Janeiro</option>
+              <option value="Fevereiro">Fevereiro</option>
+              <option value="Março">Março</option>
+              <option value="Abril">Abril</option>
+              <option value="Maio">Maio</option>
+              <option value="Junho">Junho</option>
+              <option value="Julho">Julho</option>
+              <option value="Agosto">Agosto</option>
+              <option value="Setembro">Setembro</option>
+              <option value="Outubro">Outubro</option>
+              <option value="Novembro">Novembro</option>
+              <option value="Dezembro">Dezembro</option>
+            </select>
+
+            <label for="pais">País destino:</label>
+            <select name="pais">
+              <option value="eua">EUA</option>
+              <option value="china">China</option>
+            </select>
+          </div>
+
+          <div class="filtros-coluna search-box">
+            <input type="text" class="caixa" placeholder="Município" />
+            <input type="text" class="caixa" placeholder="Carga" />
+            <button type="submit" class="buttonAplicar">Aplicar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <section class="graficos">
+      <img src="{{ url_for('static', filename='img/gráfico 3.png') }}" alt="Gráfico Funil" class="graficos-1" />
+      <div id="funnel-chart-container">
+        <canvas id="funnelChart"></canvas>
+      </div>
     </section>
-  </body>
-  <script src="{{ url_for('static', filename='js/lineChart.js') }}"></script>
+  </section>
+</body>
+<script src="{{ url_for('static', filename='js/lineChart.js') }}"></script>
+
 </html>
