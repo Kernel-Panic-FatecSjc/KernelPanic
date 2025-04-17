@@ -584,3 +584,19 @@ input[type="text"] {
   }
 }
 
+#funnel-chart-container {
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.funnel-title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: "Space Grotesk", sans-serif;
+}
