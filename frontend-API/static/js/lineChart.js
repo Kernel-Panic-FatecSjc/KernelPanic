@@ -1,3 +1,18 @@
+async function getData(data) {
+  const url = "http://localhost:5000/filtros";
+    fetch({
+      method : "POST",
+      body : data
+    }).then( resposta => {
+      console.log(resposta)
+      return resposta.json()
+    }).catch(error, ()=>{
+      console.log(error)
+    })
+  }
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('lineChart')
     ctx = canvas.getContext('2d');
@@ -49,4 +64,5 @@ document.addEventListener('DOMContentLoaded', () => {
       data: data,
       options: options
     });
+
   });

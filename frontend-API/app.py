@@ -9,7 +9,7 @@ def get_db_connection():
     conn = pymysql.connect(
         host='localhost',
         user='root',
-        password='1234',
+        password='root',
         database='api',
         cursorclass=pymysql.cursors.DictCursor 
     )
