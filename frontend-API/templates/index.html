@@ -176,13 +176,14 @@
       </form>
     </div>
     <section class="graficos">
-      <img src="{{ url_for('static', filename='img/gráfico 3.png') }}" alt="Gráfico Funil" class="graficos-1" />
-      <div id="funnel-chart-container">
+        <div id="funnel-chart-container">
         <canvas id="funnelChart"></canvas>
       </div>
     </section>
   </section>
 </body>
 <script src="{{ url_for('static', filename='js/lineChart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/funnelChart.js') }}"></script>
+
 
 </html>
