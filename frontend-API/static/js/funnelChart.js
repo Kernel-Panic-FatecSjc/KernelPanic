@@ -8,17 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
         label: 'Exportações (em milhões USD)',
         data: [500, 520, 480, 510, 530, 600, 590, 560, 620, 650, 700],
         backgroundColor: [
-          '#043872', 
-          '#1A4C8C', 
-          '#3367A8', 
-          '#5A8CC4', 
-          '#8BB1E0',
-          '#043872',
-          '#1A4C8C',
-          '#3367A8',
-          '#5A8CC4',
-          '#8BB1E0',
-          '#043872'
+          '#021A38',
+          '#03234D',
+          '#043065',
+          '#043873',
+          '#164882',
+          '#2A5991',
+          '#3F6AA1',
+          '#547BB0',
+          '#6A8CC0',
+          '#7F9DCF',
+          '#94AEDD'
         ],
         borderWidth: 0
       }]
