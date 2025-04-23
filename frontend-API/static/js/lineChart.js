@@ -11,6 +11,33 @@ async function getData(data) {
     })
   }
 
+document.querySelector('#buttonSubmitLine').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+  
+    const formData = {
+      ano: document.querySelector('[name="ano"]').value,
+      mes: document.querySelector('[name="mes"]').value,
+      pais: document.querySelector('[name="pais"]').value,
+      municipio: document.querySelector('[name="municipio"]').value,
+      ncm: document.querySelector('[name="ncm"]').value
+    };
+  
+    fetch('/filtros', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'  
+      },
+      body: JSON.stringify(formData)  
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Dados enviados com sucesso:', data);
+    })
+    .catch(error => {
+      console.error('Erro ao enviar os dados:', error);
+    });
+  });
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -66,3 +93,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
   });
+
+

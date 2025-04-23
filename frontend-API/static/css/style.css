@@ -155,7 +155,6 @@ label {
 
 #chart-container {
   width: 100%;
-  max-width: 900px;
   height: 500px;
   margin: 0 auto;
   padding: 20px;
@@ -220,7 +219,6 @@ label {
 
 .graficos-1 {
   margin-top: 270px;
-  max-width: 100%;
   height: auto;
   border-radius: 8px;
 }
@@ -234,16 +232,12 @@ label {
 
 .grafico1 {
   border: none;
-  width: 80%;
+  width: 90%;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   color: #e1d8d8;
-  margin-top: 150px;
-  margin-left: 5%;
   text-align: left;
   gap: 35px;
-  box-sizing: border-box;
 }
 
 .buttonAplicar {
@@ -260,8 +254,6 @@ label {
   font-size: 16px;
   color: #043873;
   font-family: "Space Grotesk", sans-serif;
-  margin-top: 14px;
-  margin-left: 2px;
 }
 
 .grafico1 p {
@@ -277,14 +269,9 @@ label {
 }
 
 .caixa {
-  justify-content: space-between;
+
   display: flex;
-  margin-top: 8px;
-  background-image: url("https://cdn.discordapp.com/attachments/1340414306042384545/1352380695909236736/Group_10.png?ex=67ddce2b&is=67dc7cab&hm=28f103cecf4aceb83b2125f9f56651a7146b516d7571a10745e0d39143458738&");
-  background-repeat: no-repeat;
-  background-position: 120px;
-  background-size: 1.3em;
-  padding-right: 1.3em;
+ 
 }
 
 .flex-container {
@@ -599,4 +586,68 @@ input[type="text"] {
   text-align: center;
   margin-bottom: 10px;
   font-family: "Space Grotesk", sans-serif;
+}
+
+.filtros-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end; /* alinhamento vertical */
+}
+
+.filtros-coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 200px; /* largura consistente */
+}
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 200px;
+}
+
+select,
+input[type="text"],
+input[type="number"] {
+  font-family: "Space Grotesk", sans-serif;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+.filtros-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.filtros-coluna {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
+}
+.graficoSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* altura da viewport */
+  padding: 2rem; /* evita que encoste nas bordas em telas pequenas */
+  box-sizing: border-box;
+}
+
+input[type="number"] {
+  font-family: "Space Grotesk", sans-serif;
+  border-radius: 14px;
+  font-size: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 60%;
 }

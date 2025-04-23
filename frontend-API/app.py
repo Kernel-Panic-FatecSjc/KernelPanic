@@ -9,7 +9,7 @@ def get_db_connection():
     conn = pymysql.connect(
         host='localhost',
         user='root',
-        password='root',
+        password='1234',
         database='api',
         cursorclass=pymysql.cursors.DictCursor 
     )
@@ -18,9 +18,17 @@ def get_db_connection():
 
 @app.route("/")
 def website():
-    return render_template('index.html')
+    conn = get_db_connection()
+    with conn.cursor() as cursor:
+        cursor.execute("SELECT * FROM pais")  
+        resultadosPaises = cursor.fetchall()
+        
+        cursor.execute("Select * from municipios")
+        resultadosMunicipios = cursor.fetchall()
 
-# Recebimento dos dados via POST
+    conn.close()
+    return render_template('index.html', paises=resultadosPaises, municipios=resultadosMunicipios)
+
 @app.route('/filtros', methods=['POST'])
 def filtros_dados():
     filtros = request.get_json()
