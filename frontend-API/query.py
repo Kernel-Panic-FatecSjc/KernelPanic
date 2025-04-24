@@ -6,21 +6,25 @@ def montar_query(filtros):
     else:
         raise ValueError("Informe se é 'importação' ou 'exportação' no campo 'tipo'.")
 
-    # Verifica se vai agrupar por mês
-    agrupar_por_mes = "mes" not in filtros
+    ano = filtros.get("ano")
+    mes = filtros.get("mes")
 
-    select_base = """
-        SELECT 
-            SUM(t.valor_agregado) AS total_valor_agregado,
-            SUM(t.kg_liquido_expt) AS total_kg_liquido,
-            SUM(t.vl_fob_expt) AS total_valor_fob,
-            COUNT(*) AS total_registros
-    """
-    if agrupar_por_mes:
-        select_base += ", t.co_mes AS mes"
+    # Lógica de agrupamento
+    if ano == "todos" and mes == "todos":
+        agrupamento = "ano"
+    elif ano != "todos" and mes == "todos":
+        agrupamento = "mes"
+    else:
+        agrupamento = None
+
+    select = "SELECT SUM(t.vl_fob_expt) AS total_valor_fob"
+    if agrupamento == "ano":
+        select += ", t.co_ano AS ano"
+    elif agrupamento == "mes":
+        select += ", t.co_mes AS mes"
 
     sql = f"""
-        {select_base}
+        {select}
         FROM {tabela} t
         JOIN municipios m ON m.co_mun = t.co_mun
         JOIN pais p ON p.co_pais = t.co_pais
@@ -30,30 +34,32 @@ def montar_query(filtros):
     condicoes = []
     valores = []
 
-    if "ano" in filtros:
+    if ano and ano != "todos":
         condicoes.append("t.co_ano = %s")
-        valores.append(filtros["ano"])
+        valores.append(ano)
 
-    if "mes" in filtros:
+    if mes and mes != "todos":
         condicoes.append("t.co_mes = %s")
-        valores.append(filtros["mes"])
+        valores.append(mes)
 
-    if "municipio" in filtros:
-        condicoes.append("m.co_mun = %s") 
+    if filtros.get("municipio") and filtros["municipio"] != "todos":
+        condicoes.append("m.co_mun = %s")
         valores.append(filtros["municipio"])
 
-    if "ncm" in filtros:
+    if filtros.get("ncm") and filtros["ncm"] != "todos":
         condicoes.append("t.co_sh4 = %s")
         valores.append(filtros["ncm"])
 
-    if "pais" in filtros:
+    if filtros.get("pais") and filtros["pais"] != "todos":
         condicoes.append("(p.co_pais = %s OR p.co_pais_isoa3 = %s OR p.no_pais = %s)")
         valores.extend([filtros["pais"]] * 3)
 
     if condicoes:
         sql += " WHERE " + " AND ".join(condicoes)
 
-    if agrupar_por_mes:
+    if agrupamento == "ano":
+        sql += " GROUP BY t.co_ano ORDER BY t.co_ano"
+    elif agrupamento == "mes":
         sql += " GROUP BY t.co_mes ORDER BY t.co_mes"
 
     return sql, valores

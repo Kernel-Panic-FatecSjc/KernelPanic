@@ -1,44 +1,37 @@
-async function getData(data) {
-  const url = "http://localhost:5000/filtros";
-    fetch({
-      method : "POST",
-      body : data
-    }).then( resposta => {
-      console.log(resposta)
-      return resposta.json()
-    }).catch(error, ()=>{
-      console.log(error)
-    })
-  }
 
-document.querySelector('#buttonSubmitLine').addEventListener('submit', function(event) {
-    event.preventDefault(); 
-  
-    const formData = {
-      ano: document.querySelector('[name="ano"]').value,
-      mes: document.querySelector('[name="mes"]').value,
-      pais: document.querySelector('[name="pais"]').value,
-      municipio: document.querySelector('[name="municipio"]').value,
-      ncm: document.querySelector('[name="ncm"]').value
-    };
-  
-    fetch('/filtros', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'  
-      },
-      body: JSON.stringify(formData)  
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Dados enviados com sucesso:', data);
-    })
-    .catch(error => {
-      console.error('Erro ao enviar os dados:', error);
+document.addEventListener('DOMContentLoaded', () => {
+  const button = document.getElementById('buttonSubmitLine');
+  if (button) {
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const formData = {
+        tipo: document.querySelector('[name="tipo"]').value,
+        ano: document.querySelector('[name="ano"]').value,
+        mes: document.querySelector('[name="mes"]').value,
+        pais: document.querySelector('[name="pais"]').value,
+        municipio: document.querySelector('[name="municipio"]').value,
+        ncm: document.querySelector('[name="ncm"]').value
+      };
+
+      fetch('http://127.0.0.1:5000/filtros', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Dados enviados com sucesso:', data);
+        // Atualize o gráfico aqui se necessário
+      })
+      .catch(error => {
+        console.error('Erro ao enviar os dados:', error);
+      });
     });
-  });
-
-
+  }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('lineChart')
