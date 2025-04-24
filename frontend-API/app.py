@@ -44,24 +44,49 @@ def filtros_dados():
         resultados = cursor.fetchall()
     conn.close()
 
-    # Se estiver agrupando por mês, retorna lista com dados por mês
-    if "mes" not in filtros:
+    if filtros.get("ano") != "todos" and filtros.get("mes") == "todos":
         resposta = []
-        for row in resultados:
+        for mes in range(1, 13):
+            dados_mes = next((row for row in resultados if row.get("mes") == mes), None)
+            total_valor_fob = dados_mes.get("total_valor_fob", 0) if dados_mes else 0
+            total_kg_liquido = dados_mes.get("total_kg_liquido", 0) if dados_mes else 0
+            valor_agregado = round(float(total_valor_fob) / float(total_kg_liquido), 2) if total_kg_liquido else 0
             resposta.append({
                 "tipo": filtros.get("tipo"),
                 "ano": filtros.get("ano"),
-                "mes": row["mes"],
+                "mes": mes,
                 "municipio": filtros.get("municipio"),
                 "pais": filtros.get("pais"),
                 "ncm": filtros.get("ncm"),
-                "total_valor_agregado": row["total_valor_agregado"],
-                "total_kg_liquido": row["total_kg_liquido"],
-                "total_valor_fob": row["total_valor_fob"],
-                "total_registros": row["total_registros"]
+                "total_valor_agregado": valor_agregado,
+                "total_valor_fob": total_valor_fob,
+                "total_kg_liquido": total_kg_liquido,
+                "total_registros": dados_mes.get("total_registros", 0) if dados_mes else 0
             })
+
+    elif filtros.get("ano") == "todos" and filtros.get("mes") == "todos":
+        resposta = []
+        for row in resultados:
+            total_valor_fob = row.get("total_valor_fob", 0)
+            total_kg_liquido = row.get("total_kg_liquido", 0)
+            valor_agregado = round(float(total_valor_fob) / float(total_kg_liquido), 2) if total_kg_liquido else 0
+            resposta.append({
+                "tipo": filtros.get("tipo"),
+                "ano": row.get("ano"),
+                "municipio": filtros.get("municipio"),
+                "pais": filtros.get("pais"),
+                "ncm": filtros.get("ncm"),
+                "total_valor_agregado": valor_agregado,
+                "total_valor_fob": total_valor_fob,
+                "total_kg_liquido": total_kg_liquido,
+                "total_registros": row.get("total_registros", 0)
+            })
+
     else:
-        row = resultados[0]
+        row = resultados[0] if resultados else {}
+        total_valor_fob = row.get("total_valor_fob", 0)
+        total_kg_liquido = row.get("total_kg_liquido", 0)
+        valor_agregado = round(float(total_valor_fob) / float(total_kg_liquido), 2) if total_kg_liquido else 0
         resposta = {
             "tipo": filtros.get("tipo"),
             "ano": filtros.get("ano"),
@@ -69,10 +94,10 @@ def filtros_dados():
             "municipio": filtros.get("municipio"),
             "pais": filtros.get("pais"),
             "ncm": filtros.get("ncm"),
-            "total_valor_agregado": row["total_valor_agregado"],
-            "total_kg_liquido": row["total_kg_liquido"],
-            "total_valor_fob": row["total_valor_fob"],
-            "total_registros": row["total_registros"]
+            "total_valor_agregado": valor_agregado,
+            "total_valor_fob": total_valor_fob,
+            "total_kg_liquido": total_kg_liquido,
+            "total_registros": row.get("total_registros", 0)
         }
 
     return jsonify(resposta)

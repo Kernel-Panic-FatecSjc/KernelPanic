@@ -9,15 +9,21 @@ def montar_query(filtros):
     ano = filtros.get("ano")
     mes = filtros.get("mes")
 
-    # Lógica de agrupamento
-    if ano == "todos" and mes == "todos":
-        agrupamento = "ano"
-    elif ano != "todos" and mes == "todos":
-        agrupamento = "mes"
+    if ano != "todos" and mes == "todos":
+        agrupamento = "mes" 
+    elif ano == "todos" and mes == "todos":
+        agrupamento = "ano" 
+    elif ano != "todos" and mes != "todos":
+        agrupamento = None  
     else:
         agrupamento = None
 
-    select = "SELECT SUM(t.vl_fob_expt) AS total_valor_fob"
+    select = """
+        SELECT 
+            SUM(t.kg_liquido_expt) as total_kg_liquido,
+            SUM(t.vl_fob_expt) AS total_valor_fob,
+            COUNT(*) AS total_registros
+        """
     if agrupamento == "ano":
         select += ", t.co_ano AS ano"
     elif agrupamento == "mes":

@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="../static//js//lineChart.js"></script>
   <title>Gráfico de Exportações</title>
 </head>
 
@@ -60,16 +59,14 @@
 
         <div class="titulo-logo">
           <div class="titulo">
-            <h3 class="titulo-texto">Balança Comercial entre 2013 e 2023</h3>
+            <h3 class="titulo-texto">Balança comercial do Estado de São Paulo(2013 - 2023)</h3>
           </div>
-          <div class="logo-container">
-            <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo2" />
-          </div>
-        </div>
+
           <div class="filtros-container">
             <div class="filtros-coluna">
+            
               <div>
-                <label for="tipo">Tipo:</label>
+                <label for="tipo">Tipo de movimentação:</label>
                 <select name="tipo">
                   <option value="importação">Importação</option>
                   <option value="exportação">Exportação</option>
@@ -92,25 +89,8 @@
                   <option value="2023">2023</option>
                 </select>
               </div>
-              <div>
-  
-                <label for="mes">Mês:</label>
-                <select name="mes">
-                  <option value="todos">Todos os meses</option>
-                  <option value="Janeiro">Janeiro</option>
-                  <option value="Fevereiro">Fevereiro</option>
-                  <option value="Março">Março</option>
-                  <option value="Abril">Abril</option>
-                  <option value="Maio">Maio</option>
-                  <option value="Junho">Junho</option>
-                  <option value="Julho">Julho</option>
-                  <option value="Agosto">Agosto</option>
-                  <option value="Setembro">Setembro</option>
-                  <option value="Outubro">Outubro</option>
-                  <option value="Novembro">Novembro</option>
-                  <option value="Dezembro">Dezembro</option>
-                </select>
-              </div>
+
+              
               
               <div>
                 <label for="pais">País destino:</label>
@@ -126,9 +106,18 @@
   
             <div class="filtros-coluna">
               <div>
+                <label for="metrica">Métrica:</label>
+                <select name="metrica">
+                  <option value="valor_FOB">Valor FOB</option>
+                  <option value="valor_agregado">Valor Agregado</option>
+                  <option value="total_registros">Quantidade movimentada</option>
+                  <option value="total_kg_liquido">KG movimentado</option>
+                </select>
+              </div>
+              <div>
                 <label for="municipio">Municípios:</label>
                 <select name="municipio">
-                  <option>Todo o Estado</option>
+                  <option value="todos">Todo o Estado</option>
                   {% for municipio in municipios %}
                     <option value="{{ municipio['co_mun'] }}">{{ municipio['no_mun'] }}</option>
                   {% endfor %}
@@ -139,15 +128,17 @@
                 <label for="ncm">Código NCM</label>
                 <input type="text" name="ncm" class="caixa" placeholder="Código NCM" />
               </div>
-              <button id="buttonSubmitLine" class="buttonAplicar">Aplicar</button>
-  
+              <button type="submit" id="buttonSubmitLine" class="buttonAplicar">Aplicar</button>
             </div>
           </div>
-      </div>
+        
       </div>
     <section class="graficos">
       <div id="chart-container">
         <canvas id="lineChart"></canvas>
+      </div>
+      <div id="loading" class="loading-container" style="display:none;">
+        <div class="spinner"></div>
       </div>
     </section>
   </section>
@@ -159,9 +150,6 @@
       <div class="titulo-logo">
         <div class="titulo">
           <h3 class="titulo-texto">Top 5 Produtos por Valor Agregado</h3>
-        </div>
-        <div class="logo-container">
-          <img src="{{ url_for('static', filename='img/KernelPanic.png') }}" alt="logo" class="logo2" />
         </div>
       </div>
       <form>

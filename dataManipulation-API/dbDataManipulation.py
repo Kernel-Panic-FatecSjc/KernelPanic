@@ -29,17 +29,24 @@ def insertValues(dataFrame: pd.DataFrame, generateQuerry: callable, table_name: 
     loading_count = 100 / len(dataFrame)
     loading = 0
 
-    for _, row in dataFrame.iterrows():
-        try:
-            query = generateQuerry(table_name, columns, row.tolist())
-            cursor.execute(query)
-            print(query)
-        except Exception as e:
-            print(f"Erro ao inserir linha: {e}. Ignorando...")
+    for index, row in dataFrame.iterrows():
+        row_values = row.tolist()
+
+        # Verifica se o número de valores bate com o número de colunas
+        if len(row_values) != len(columns):
+            print(f"Linha {index} ignorada: número de colunas não corresponde.")
             continue
+
+        try:
+            query = generateQuerry(table_name, columns, row_values)
+            cursor.execute(query)
+        except Exception as e:
+            print(f"Erro ao inserir linha {index}: {e}. Ignorando...")
+            continue
+
         loading += loading_count
         print(f"Carregando {table_name}: {round(loading, 2)}%", end='\r')
-    
+
     print(f"{table_name} inseridos!")
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
