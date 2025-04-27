@@ -121,7 +121,40 @@ Para o funcionamento do nosso sistema, você precisara das seguintes tecnologias
 </details>
 <br>
 
-## 3º Passo: Abrindo a aplicação web
+## 3º Passo: criarBanco de Dados
+
+<details>
+  <summary><b>Clique aqui</b></summary>
+
+  1. No Terminal Exectue e insira a senha:
+  ```
+  mysql -u root -p
+  ```
+  2. Dentro do MySQL execute:
+  ```
+  source ~/KernelPanic/Database/criarBanco.sql
+  ```
+</details>
+<br>
+
+## 4° Passo : Inserir Dados no Banco
+<details>
+  <summary><b>Clique aqui</b></summary>
+
+  1.Procure o Arquivo dbDataManipulation.py e coloque suas credencias Root:
+  ```
+  /KernelPanic/src/dataManipulation-API/dbDataManipulation.py
+  ```
+
+  2. No Terminal da pasta Raiz do projeto, execute:
+  ```
+  python3 /src/dataManipulation-API/dbDataManipulation.py
+  ```
+
+</details>
+<br>
+
+## 5º Passo: Abrindo a aplicação web
 
 <details>
   <summary><b>Clique aqui</b></summary>
@@ -130,14 +163,14 @@ Para o funcionamento do nosso sistema, você precisara das seguintes tecnologias
   ```
   flask run
   ```
+   
+  2. Por fim, entre no link que aparecerá no cmd copiando e colando ele no seu navegador de preferência, ou então simplesmente clique aqui:
+    <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>
 
-  2. Por fim, entre no link que aparecerá no cmd copiando e colando ele no seu navegador de preferência, ou então simplesmente clique aqui: <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>
-
-  3. Após finalizar o uso do nosso site, para sair do ambiente virtual, no terminal, execute o atalho `Ctrl+C` para finalizar o serviço do Flask, e então execute o seguinte comando:
+  4. Após finalizar o uso do nosso site, para sair do ambiente virtual, no terminal, execute o atalho `Ctrl+C` para finalizar o serviço do Flask, e então execute o seguinte comando:
   ```
   deactivate
   ```
-
 </details>
 <br>
 
