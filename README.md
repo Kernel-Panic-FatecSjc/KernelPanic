@@ -4,7 +4,7 @@
 
 > _A API se trata de um projeto submetido à metodologia de ensino em implantação na Fatec São José dos Campos, do qual os alunos formam equipes baseadas na metodologia ágil SCRUM, tendo um aluno como Scrum Master, um sendo o Product Owner e o restante dos integrantes como Dev Team._
 
-###  ⏳ Status do projeto: 1/3 Sprint ✅
+###  ⏳ Status do projeto: 2/3 Sprint ✅
 
 ## Visão Geral
   Este projeto tem como objetivo desenvolver uma API para análise de dados das exportações e importações do estado de São Paulo. A solução permitirá a extração e visualização de informações estratégicas sobre os produtos exportados, destinos e tendências históricas.
