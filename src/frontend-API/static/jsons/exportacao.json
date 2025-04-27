@@ -1,0 +1,123 @@
+[
+	{
+		"ano": 2013,
+		"municipio": "todos",
+		"ncm": null,
+		"pais": null,
+		"tipo": "exportação",
+		"total_kg_liquido": "51850035985",
+		"total_registros": 332494,
+		"total_valor_agregado": 1.2,
+		"total_valor_fob": 62437628074
+	},
+	{
+		"ano": 2014,
+		"municipio": "todos",
+		"ncm": null,
+		"pais": null,
+		"tipo": "exportação",
+		"total_kg_liquido": "48154404817",
+		"total_registros": 327110,
+		"total_valor_agregado": 1.19,
+		"total_valor_fob": 57124508507
+	},
+	{
+		"ano": 2015,
+		"municipio": "todos",
+		"ncm": null,
+		"pais": null,
+		"tipo": "exportação",
+		"total_kg_liquido": "53363647029",
+		"total_registros": 328999,
+		"total_valor_agregado": 0.95,
+		"total_valor_fob": 50909911772
+	},
+	{
+		"ano": 2016,
+		"municipio": "todos",
+		"ncm": null,
+		"pais": null,
+		"tipo": "exportação",
+		"total_kg_liquido": "59091202748",
+		"total_registros": 342400,
+		"total_valor_agregado": 0.88,
+		"total_valor_fob": 52094001910
+	},
+	{
+		"ano": 2017,
+		"municipio": "todos",
+		"ncm": null,
+		"pais": null,
+		"tipo": "exportação",
+		"total_kg_liquido": "62627958132",
+		"total_registros": 343396,
+		"total_valor_agregado": 0.93,
+		"total_valor_fob": 57981352813
+	},
+	{
+		"ano": 2018,
+		"municipio": "todos",
+		"ncm": null,
+		"pais": null,
+		"tipo": "exportação",
+		"total_kg_liquido": "72455717588",
+		"total_registros": 353594,
+		"total_valor_agregado": 0.88,
+		"total_valor_fob": 63483066535
+	},
+	{
+		"ano": 2019,
+		"municipio": "todos",
+		"ncm": null,
+		"pais": null,
+		"tipo": "exportação",
+		"total_kg_liquido": "52597809454",
+		"total_registros": 402133,
+		"total_valor_agregado": 0.98,
+		"total_valor_fob": 51459592359
+	},
+	{
+		"ano": 2020,
+		"municipio": "todos",
+		"ncm": null,
+		"pais": null,
+		"tipo": "exportação",
+		"total_kg_liquido": "65247736577",
+		"total_registros": 380884,
+		"total_valor_agregado": 0.72,
+		"total_valor_fob": 46655683092
+	},
+	{
+		"ano": 2021,
+		"municipio": "todos",
+		"ncm": null,
+		"pais": null,
+		"tipo": "exportação",
+		"total_kg_liquido": "59620182012",
+		"total_registros": 416877,
+		"total_valor_agregado": 0.96,
+		"total_valor_fob": 57364488506
+	},
+	{
+		"ano": 2022,
+		"municipio": "todos",
+		"ncm": null,
+		"pais": null,
+		"tipo": "exportação",
+		"total_kg_liquido": "66134084073",
+		"total_registros": 421195,
+		"total_valor_agregado": 1.12,
+		"total_valor_fob": 74138118220
+	},
+	{
+		"ano": 2023,
+		"municipio": "todos",
+		"ncm": null,
+		"pais": null,
+		"tipo": "exportação",
+		"total_kg_liquido": "71121208339",
+		"total_registros": 430399,
+		"total_valor_agregado": 1.07,
+		"total_valor_fob": 75886063881
+	}
+]

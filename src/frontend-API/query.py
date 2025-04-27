@@ -1,7 +1,7 @@
 def montar_query(filtros):
-    if filtros.get("tipo") == "importação":
+    if filtros.get("tipo") == "importacao":
         tabela = "importacao"
-    elif filtros.get("tipo") == "exportação":
+    elif filtros.get("tipo") == "exportacao":
         tabela = "exportacao"
     else:
         raise ValueError("Informe se é 'importação' ou 'exportação' no campo 'tipo'.")

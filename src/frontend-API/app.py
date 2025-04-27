@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from query import montar_query
 import pymysql
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 # Dados para conectar ao banco de dados
 def get_db_connection():
