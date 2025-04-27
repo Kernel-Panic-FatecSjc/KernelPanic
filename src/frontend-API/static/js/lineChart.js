@@ -5,6 +5,14 @@ const mesesNomes = [
   "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
   "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
 ];
+function filtosNomes() {
+  const valor = document.querySelector('[name="metrica"]').value;
+  return valor == 'valor_FOB' ? "Valor Fob" :
+         valor == "total_registros" ? "Total Registros" :
+         valor == "total_kg_liquido" ? "Total Kg Liquido" :
+         "Valor Agregado";
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('lineChart');
@@ -41,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
           beginAtZero: true,
           title: {
             display: true,
-            text: 'Valor FOB (USD)',
+            text: filtosNomes(),
             color: '#043873'
           },
           ticks: { color: '#043873' }
@@ -56,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
 
       document.getElementById('loading').style.display = 'flex';
-
+      chartLine.options.scales.y.title.text= filtosNomes()
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 120000); // 2 min
 
@@ -93,18 +101,23 @@ document.addEventListener('DOMContentLoaded', () => {
         let valores = null;
         const metricaSelecionada = document.querySelector('[name="metrica"]').value;
         if(metricaSelecionada == 'valor_FOB'){
-           valores = data.map(d => d.total_valor_fob);
-        }else if(metricaSelecionada == 'total_registros'){
-           valores = data.map(d => d.total_registros);
-        }else if(metricaSelecionada == 'total_kg_liquido'){
-          valores = data.map(d => d.total_kg_liquido); 
-        }else{
-           valores = data.map(d => d.total_valor_agregado);
-        }
-      
-        chartLine.data.labels = labels;
-        chartLine.data.datasets[0].data = valores;
-        chartLine.update();
+          valores = data.map(d => d.total_valor_fob);
+          chartLine.data.datasets[0].label = 'Valor FOB';
+       }else if(metricaSelecionada == 'total_registros'){
+          valores = data.map(d => d.total_registros);
+          chartLine.data.datasets[0].label = 'Total Registros';
+       }else if(metricaSelecionada == 'total_kg_liquido'){
+         valores = data.map(d => d.total_kg_liquido);
+         chartLine.data.datasets[0].label = 'Total Kg Líquido'; 
+       }else{
+          valores = data.map(d => d.total_valor_agregado);
+          chartLine.data.datasets[0].label = 'Valor Agregado';
+       }
+       
+       
+       chartLine.data.labels = labels;
+       chartLine.data.datasets[0].data = valores;
+       chartLine.update();
       })
       .catch(error => {
         console.error('Erro ao enviar os dados:', error);
