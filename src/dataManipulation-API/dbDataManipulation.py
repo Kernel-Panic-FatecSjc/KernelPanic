@@ -54,6 +54,8 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 # Diretório do Projeto
 importacoesSP = os.path.join(base_dir, "data", "importacoesSP.csv")
 exportacoesSP = os.path.join(base_dir, "data", "exportacoesSP.csv")
+importacoesSP2025 = os.path.join(base_dir, "data", "importacoesSP2025.csv")
+exportacoesSP2025 = os.path.join(base_dir, "data", "exportacoesSP2025.csv")
 municipios = os.path.join(base_dir, "data", "municipiosSP.csv")
 paises = os.path.join(base_dir, "data", "paises.csv")
 sh4 = os.path.join(base_dir, "data", "sh4.csv")
@@ -63,13 +65,16 @@ df_sh4 = pd.read_csv(sh4, sep=";", encoding="latin1")
 df_municipios = pd.read_csv(municipios, sep=";", encoding="latin1")
 df_exportacoes = pd.read_csv(exportacoesSP, sep=";", encoding="latin1")
 df_importacoes = pd.read_csv(importacoesSP, sep=";", encoding="latin1")
+df_exportacoes2025 = pd.read_csv(exportacoesSP2025, sep=";", encoding="latin1")
+df_importacoes2025 = pd.read_csv(importacoesSP2025, sep=";", encoding="latin1")
+
 
 try:
     connection = mysql.connector.connect(
         host='localhost',
         database='api',  
         user='root', 
-        password='1234'  
+        password='root'  
     )
 
     if connection.is_connected():
@@ -91,6 +96,12 @@ try:
         # Inserir Importações
         insertValues(df_importacoes, generateQuerry, "importacao", ["co_ano", "co_mes", "co_sh4", "co_pais", "sg_uf_ncm", "co_mun", "kg_liquido_expt", "vl_fob_expt", "valor_agregado"])
 
+        # Inserir Exportacoes ate 2025
+        insertValues(df_exportacoes2025, generateQuerry, "exportacao", ["co_ano", "co_mes", "co_sh4", "co_pais", "sg_uf_ncm", "co_mun", "kg_liquido_expt", "vl_fob_expt", "valor_agregado"])
+
+        # Inserir Importações ate 2025
+        insertValues(df_importacoes2025, generateQuerry, "importacao", ["co_ano", "co_mes", "co_sh4", "co_pais", "sg_uf_ncm", "co_mun", "kg_liquido_expt", "vl_fob_expt", "valor_agregado"])
+        
         connection.commit()
         print("Dados inseridos com sucesso!")
 

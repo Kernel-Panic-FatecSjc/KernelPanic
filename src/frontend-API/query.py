@@ -39,6 +39,8 @@ def montar_query(filtros):
 
     condicoes = []
     valores = []
+    # if filtros.get("mucipio")== "3450308":
+        
 
     if ano and ano != "todos":
         condicoes.append("t.co_ano = %s")
@@ -47,7 +49,7 @@ def montar_query(filtros):
     if mes and mes != "todos":
         condicoes.append("t.co_mes = %s")
         valores.append(mes)
-
+    
     if filtros.get("municipio") and filtros["municipio"] != "todos":
         condicoes.append("m.co_mun = %s")
         valores.append(filtros["municipio"])

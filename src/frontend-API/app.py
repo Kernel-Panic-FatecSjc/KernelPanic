@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, jsonify
 from query import montar_query
 import pymysql
+import time
+import time
 
 app = Flask(__name__, static_folder='static')
 
@@ -9,11 +11,11 @@ def get_db_connection():
     conn = pymysql.connect(
         host='localhost',
         user='root',
-        password='1234',
+        password='root',
         database='api',
         cursorclass=pymysql.cursors.DictCursor 
     )
-    print("COnexao feita!")
+    print("Conexao feita!")
     return conn
 
 @app.route("/")
@@ -38,11 +40,17 @@ def filtros_dados():
     except ValueError as e:
         return jsonify({'error': str(e)}), 400
 
+    start = time.perf_counter() #Aqui que funciona a Requisição
+
     conn = get_db_connection()
     with conn.cursor() as cursor:
         cursor.execute(query, params)
         resultados = cursor.fetchall()
     conn.close()
+    print(query,params)
+       
+    finish = time.perf_counter()
+    print(f"Requisição no Banco Feita em: {round(finish-start,2)} segundos")
 
     if filtros.get("ano") != "todos" and filtros.get("mes") == "todos":
         resposta = []
