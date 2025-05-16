@@ -51,14 +51,14 @@
         maintainAspectRatio: false,
         scales: {
           x: {
-            title: { display: true, text: "Período", color: "#043873" },
+            title: { display: true, text: "Produtos", color: "#043873" },
             ticks: { color: "#043873" },
           },
           y: {
             beginAtZero: true,
             title: {
               display: true,
-              text: "Total de Registros",
+              text: "Valor agregado",
               color: "#043873",
             },
             ticks: { color: "#043873" },
@@ -81,7 +81,6 @@
           mes: document.getElementById("funnel-mes").value,
           pais: document.getElementById("funnel-pais").value,
           municipio: document.getElementById("funnel-municipio").value,
-          ncm: document.getElementById("funnel-ncm").value,
         };
 
         fetch("http://127.0.0.1:5000/filtros_funil", {

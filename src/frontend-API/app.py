@@ -10,7 +10,7 @@ def get_db_connection():
     conn = pymysql.connect(
         host='localhost',
         user='root',
-        password='',
+        password='Feluvi0511',
         database='api',
         cursorclass=pymysql.cursors.DictCursor 
     )
@@ -95,10 +95,7 @@ def filtros_dados():
             "mes": filtros.get("mes"),
             "municipio": filtros.get("municipio"),
             "pais": filtros.get("pais"),
-            "ncm": filtros.get("ncm"),
             "total_valor_agregado": valor_agregado,
-            "total_valor_fob": total_valor_fob,
-            "total_kg_liquido": total_kg_liquido,
             "total_registros": row.get("total_registros", 0)
         }
 
@@ -128,10 +125,7 @@ def filtros_dados_funil():
             "mes": row.get("mes") if "mes" in row else None,
             "municipio": filtros.get("municipio"),
             "pais": filtros.get("pais"),
-            "ncm": filtros.get("ncm"),
             "total_valor_agregado": row.get("total_valor_agregado", 0),
-            "total_valor_fob": row.get("total_valor_fob", 0),
-            "total_kg_liquido": row.get("total_kg_liquido", 0),
             "total_registros": row.get("total_registros", 0)
         })
 
