@@ -100,12 +100,7 @@
               console.error("Formato dos dados inesperado:", receivedData);
               return;
             }
-            labels = dataSalva.map((d) => {
-              if (d.mes && d.mes !== "todos") {
-                return mesesNomes[Number(d.mes)] || d.mes;
-              }
-              return d.ano || "N/D";
-            });
+            labels = dataSalva.map((d) => d.nome_produto || "Produto desconhecido");
             atualizarGrafico();
           })
           .catch((error) => {

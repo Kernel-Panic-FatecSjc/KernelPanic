@@ -10,8 +10,9 @@ def get_db_connection():
     conn = pymysql.connect(
         host='localhost',
         user='root',
-        password='Feluvi0511',
+        password='',
         database='api',
+        charset='utf8mb4',
         cursorclass=pymysql.cursors.DictCursor 
     )
     print("Conexão feita!")
@@ -126,7 +127,8 @@ def filtros_dados_funil():
             "municipio": filtros.get("municipio"),
             "pais": filtros.get("pais"),
             "total_valor_agregado": row.get("total_valor_agregado", 0),
-            "total_registros": row.get("total_registros", 0)
+            "total_registros": row.get("total_registros", 0),
+            "nome_produto": row.get("nome_produto", "").split(";")[0].split(",")[0][:50]
         })
 
     return jsonify(resposta)
