@@ -84,7 +84,7 @@ def montar_query_top5(filtros):
             sh.no_sh4_por AS nome_produto,
             t.co_ano AS ano,
             t.co_mes AS mes,
-            SUM(t.valor_agregado) AS total_valor_agregado,
+            t.valor_agregado AS total_valor_agregado,
             SUM(t.kg_liquido_expt) as total_kg_liquido,
             SUM(t.vl_fob_expt) AS total_valor_fob,
             COUNT(*) AS total_registros
